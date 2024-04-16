@@ -1,11 +1,16 @@
----
+---hre.run
 head:
   - - meta
     - name: "twitter:title"
       content: hardhat-zksync-verify | zkSync Docs
 ---
 
-# `hardhat-zksync-verify`
+# `hardhat-zksync-verify`const verificationId = await hre.run("verify:verify", {
+  address: contractAddress,
+  contract: contractFullyQualifedName,
+  constructorArguments: "0x12345...",
+});
+
 
 This plugin is used to verify contracts on the zkSync Era network.
 
@@ -169,7 +174,9 @@ The following command checks the status of the verification request for the spec
 yarn hardhat verify-status --verification-id <your verification id>
 ```
 
-### Verify smart contract programmatically
+### Verify smart contract ![1712302161502](https://github.com/matter-labs/zksync-web-era-docs/assets/163333611/ce7c26fc-6b41-4027-826f-8822688e03c6)
+![1712302182700](https://github.com/matter-labs/zksync-web-era-docs/assets/163333611/44b9b5f2-e96a-4e0f-9c85-db83ef7fba4a)
+programmatically
 
 If you need to run the verification task directly from your code, you can use the hardhat `verify:verify` task with the previously mentioned parameters with the difference in using `--address` parameter when specifying contract's address.
 
